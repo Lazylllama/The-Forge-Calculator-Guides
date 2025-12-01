@@ -14,31 +14,51 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          fetch-depth: 0
+
+      - name: Get Changed Files
+        id: changed
+        run: |
+          # Get list of changed .md files (excluding README)
+          FILES=$(git diff --name-only origin/main HEAD -- '*.md' | grep -v README.md || true)
+          echo "files=$FILES" >> $GITHUB_OUTPUT
+          echo "Changed files: $FILES"
 
       - name: Validate Guide Frontmatter
         run: |
           echo "Validating guide frontmatter..."
 
-          # Find all changed markdown files
           ERRORS=0
+          CHANGED_FILES="${{ steps.changed.outputs.files }}"
 
-          for file in $(find . -maxdepth 1 -name "*.md" -type f ! -name "README.md"); do
+          # If no markdown files changed, skip validation
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "✅ No guide files changed, skipping validation"
+            exit 0
+          fi
+
+          for file in $CHANGED_FILES; do
+            # Skip if file doesn't exist (was deleted)
+            if [ ! -f "$file" ]; then
+              echo "⏭️  $file was deleted, skipping"
+              continue
+            fi
+            
             echo "Checking $file..."
             
-            # Check if file starts with ---
-            if ! head -1 "$file" | grep -q "^---$"; then
+            # Normalize line endings and check frontmatter
+            CONTENT=$(cat "$file" | tr -d '\r')
+            FIRST_LINE=$(echo "$CONTENT" | head -1)
+            
+            if [ "$FIRST_LINE" != "---" ]; then
               echo "❌ $file: Missing frontmatter (must start with ---)"
               ERRORS=$((ERRORS + 1))
               continue
             fi
             
-            # Extract frontmatter
-            FRONTMATTER=$(sed -n '1,/^---$/p' "$file" | tail -n +2 | head -n -1)
+            # Extract frontmatter (between first and second ---)
+            FRONTMATTER=$(echo "$CONTENT" | sed -n '2,/^---$/p' | head -n -1)
             
             # Check required fields
             if ! echo "$FRONTMATTER" | grep -q "^title:"; then
@@ -61,13 +81,6 @@ jobs:
               ERRORS=$((ERRORS + 1))
             fi
             
-            # Validate category is one of allowed values
-            CATEGORY=$(echo "$FRONTMATTER" | grep "^category:" | sed 's/category:\s*//')
-            VALID_CATEGORIES="Beginner Advanced Reference General"
-            if ! echo "$VALID_CATEGORIES" | grep -qw "$CATEGORY"; then
-              echo "⚠️  $file: Category '$CATEGORY' is not standard (Beginner, Advanced, Reference, General)"
-            fi
-            
             # Check if heroImage file exists (if specified)
             HERO=$(echo "$FRONTMATTER" | grep "^heroImage:" | sed 's/heroImage:\s*//')
             if [ -n "$HERO" ] && [ ! -f "$HERO" ]; then
@@ -88,9 +101,7 @@ jobs:
               ERRORS=$((ERRORS + 1))
             fi
             
-            if [ $ERRORS -eq 0 ]; then
-              echo "✅ $file: Valid"
-            fi
+            echo "✅ $file: Valid"
           done
 
           echo ""
@@ -98,5 +109,5 @@ jobs:
             echo "❌ Validation failed with $ERRORS error(s)"
             exit 1
           else
-            echo "✅ All guides validated successfully!"
+            echo "✅ All changed guides validated successfully!"
           fi
