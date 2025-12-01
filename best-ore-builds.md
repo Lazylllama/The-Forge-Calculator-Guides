@@ -49,11 +49,11 @@ This guide covers the most effective ore combinations for crafting powerful weap
 
 Full sets using **Chestplate + Leggings + Helmet**:
 
-| Piece          | Ores                                           | Multiplier | Key Stats                                                                                                      |
-| -------------- | ---------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------- |
-| **Chestplate** | 12 Darkryte, 8 Obsidian, 8 Eye Ore, 8 Demonite | 4.73x      | 15.00% Dodge Chance (Negate Fully), 19.50% Vitality, 16.25% Burn Enemy on Hit, 9.75% Weapon Dmg, -6.50% Health |
-| **Leggings**   | 9 Darkryte, 7 Obsidian, 7 Eye Ore, 7 Demonite  | 4.63x      | 15.00% Dodge Chance (Negate Fully), 21.00% Vitality, 17.50% Burn Enemy, 10.50% Weapon Dmg, -7.00% Health       |
-| **Helmet**     | 7 Darkryte, 6 Obsidian, 6 Eye Ore, 6 Demonite  | 4.61x      | 13.65% Dodge Chance (Negate Fully), 21.90% Vitality, 18.25% Burn Enemy, 10.95% Weapon Dmg, -7.30% Health       |
+| Piece          | Ores                                           | Multiplier | Key Stats                                                                                                                     |
+| -------------- | ---------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Chestplate** | 12 Darkryte, 8 Obsidian, 8 Eye Ore, 8 Demonite | 4.73x      | 15.00% Dodge Chance (Negate Fully), 19.50% Vitality, 16.25% Burn Enemy when Damage is Taken, 9.75% Weapon Dmg, -6.50% Health  |
+| **Leggings**   | 9 Darkryte, 7 Obsidian, 7 Eye Ore, 7 Demonite  | 4.63x      | 15.00% Dodge Chance (Negate Fully), 21.00% Vitality, 17.50% Burn Enemy when Damage is Taken, 10.50% Weapon Dmg, -7.00% Health |
+| **Helmet**     | 7 Darkryte, 6 Obsidian, 6 Eye Ore, 6 Demonite  | 4.61x      | 13.65% Dodge Chance (Negate Fully), 21.90% Vitality, 18.25% Burn Enemy when Damage is Taken, 10.95% Weapon Dmg, -7.30% Health |
 
 ### Mid/Endgame Armor
 
@@ -63,13 +63,29 @@ Full sets using **Chestplate + Leggings + Helmet**:
 | **Leggings**   | 9 Demonite, 7 Obsidian, 7 Eye Ore, 7 Mythril  | 4.19x      | 15.00% Dodge Chance, 21.00% Vitality, 10.50% Vitality, 10.50% Weapon Dmg, -7.00% Health |
 | **Helmet**     | 7 Demonite, 6 Obsidian, 6 Eye Ore, 6 Mythril  | 4.13x      | 13.65% Dodge Chance, 21.90% Vitality, 10.95% Vitality, 10.95% Weapon Dmg, -7.30% Health |
 
-### Mid Game Armor
+> 💡 This option is more tanky and suffers less DPS
+
+### Mid/Late Game Armor (High DPS)
+
+> **Credit:** This build contributed by **@boldonkick** on Discord
+
+| Piece          | Ores                                | Multiplier | Key Stats                                                                         |
+| -------------- | ----------------------------------- | ---------- | --------------------------------------------------------------------------------- |
+| **Chestplate** | 11 Obsidian, 14 Eye Ore, 11 Uranium | 3.19x      | 15.00% Weapon Dmg, -10.00% Health, 5.00% Max HP AOE Dmg on Armor, 30.00% Vitality |
+| **Leggings**   | 9 Obsidian, 12 Eye Ore, 9 Uranium   | 3.21x      | 15.00% Weapon Dmg, -10.00% Health, 5.00% Max HP AOE Dmg on Armor, 30.00% Vitality |
+| **Helmet**     | 9 Obsidian, 9 Eye Ore, 9 Uranium    | 3.21x      | 15.00% Weapon Dmg, -10.00% Health, 5.00% Max HP AOE Dmg on Armor, 30.00% Vitality |
+
+> 💡 This option has higher DPS (and looks better!)
+
+### Mid Game Armor (Tanky)
 
 | Piece          | Ores                                         | Multiplier | Key Stats                                                                                         |
 | -------------- | -------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------- |
 | **Chestplate** | 12 Mythril, 8 Obsidian, 8 Eye Ore, 8 Uranium | 3.24x      | 3.25% Max HP AOE Dmg on Armor, 19.50% Vitality, 15.00% Vitality, 9.75% Weapon Dmg, -6.50% Health  |
 | **Leggings**   | 9 Mythril, 7 Obsidian, 7 Eye Ore, 7 Uranium  | 3.23x      | 3.50% Max HP AOE Dmg on Armor, 21.00% Vitality, 15.00% Vitality, 10.50% Weapon Dmg, -7.00% Health |
 | **Helmet**     | 7 Mythril, 6 Obsidian, 6 Eye Ore, 6 Uranium  | 3.22x      | 3.65% Max HP AOE Dmg on Armor, 21.90% Vitality, 13.65% Vitality, 10.95% Weapon Dmg, -7.30% Health |
+
+> 💡 This option is more tanky and suffers less DPS
 
 ---
 
