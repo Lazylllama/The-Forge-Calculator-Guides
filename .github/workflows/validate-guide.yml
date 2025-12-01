@@ -10,7 +10,7 @@ jobs:
   validate:
     name: Validate Frontmatter
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,10 +23,10 @@ jobs:
       - name: Validate Guide Frontmatter
         run: |
           echo "Validating guide frontmatter..."
-          
+
           # Find all changed markdown files
           ERRORS=0
-          
+
           for file in $(find . -maxdepth 1 -name "*.md" -type f ! -name "README.md"); do
             echo "Checking $file..."
             
@@ -92,7 +92,7 @@ jobs:
               echo "✅ $file: Valid"
             fi
           done
-          
+
           echo ""
           if [ $ERRORS -gt 0 ]; then
             echo "❌ Validation failed with $ERRORS error(s)"
