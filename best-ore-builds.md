@@ -13,7 +13,7 @@ order: 5
 This guide covers the most effective ore combinations for crafting powerful weapons and armor, from mid-game all the way to end-game. All builds are tested and optimized for maximum effectiveness.
 
 > **Credit:** These builds were compiled and tested by **Nipozy** (@Nipozyyy on TikTok)
-> 
+>
 > 📊 [View the full spreadsheet](https://docs.google.com/spreadsheets/d/1Pvdl1A5VozImwdH_XxFRZWLxaHVpf11eclIEMUx4XEY/edit?gid=0#gid=0)
 
 ---
